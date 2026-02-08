@@ -8,8 +8,8 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Menu Page CSS -->
-  <link rel="stylesheet" href="menu.css">
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -36,34 +36,82 @@
 </nav>
 
 <!-- MENU HEADER -->
-<header class="menu-header text-white text-center">
+<header class="menu-header text-center">
   <div class="container">
     <h1 class="display-4 fw-bold">Our Menu</h1>
-    <p class="lead">Big flavors. Zero regrets.</p>
+    <p class="lead">Delicious items with calories and prices</p>
   </div>
 </header>
 
 <!-- MENU CONTENT -->
 <section class="py-5">
-  <div class="container">
+  <div class="container menu-container">
 
-    <h2>🍔 Burgers</h2>
-    <p>Classic FireBun, Double Heat, Bacon Blaze</p>
+    <!-- Burger Card -->
+    <div class="menu-card">
+      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Classic FireBun">
+      <div class="menu-card-body">
+        <h5>Classic FireBun</h5>
+        <p>Beef patty, cheddar cheese, lettuce, tomato, FireBun sauce</p>
+        <p class="price-cal">$7.99 • 550 cal</p>
+      </div>
+    </div>
 
-    <h2 class="mt-4">🥬 Veggie Burgers</h2>
-    <p>Green Grill, Spicy Veggie Melt</p>
+    <!-- Double Heat -->
+    <div class="menu-card">
+      <img src="https://images.unsplash.com/photo-1604908177520-0ce16be9f31e" alt="Double Heat Burger">
+      <div class="menu-card-body">
+        <h5>Double Heat</h5>
+        <p>Two beef patties, spicy sauce, pickles, cheddar</p>
+        <p class="price-cal">$9.99 • 750 cal</p>
+      </div>
+    </div>
 
-    <h2 class="mt-4">🍟 Sides</h2>
-    <p>Classic Fries, Loaded Fries, Nachos</p>
+    <!-- Veggie Burger -->
+    <div class="menu-card">
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Green Grill">
+      <div class="menu-card-body">
+        <h5>Green Grill</h5>
+        <p>Plant-based patty, lettuce, tomato, vegan sauce</p>
+        <p class="price-cal">$7.49 • 500 cal</p>
+      </div>
+    </div>
 
-    <h2 class="mt-4">🥤 Milkshakes</h2>
-    <p>Vanilla, Chocolate, Strawberry</p>
+    <!-- Fries -->
+    <div class="menu-card">
+      <img src="https://images.unsplash.com/photo-1550317138-10000687a72b" alt="Classic Fries">
+      <div class="menu-card-body">
+        <h5>Classic Fries</h5>
+        <p>Golden, crispy, lightly salted</p>
+        <p class="price-cal">$2.99 • 300 cal</p>
+      </div>
+    </div>
+
+    <!-- Milkshake -->
+    <div class="menu-card">
+      <img src="https://images.unsplash.com/photo-1576765607922-64f1a6a01702" alt="Chocolate Shake">
+      <div class="menu-card-body">
+        <h5>Chocolate Shake</h5>
+        <p>Rich chocolate flavor, creamy and cold</p>
+        <p class="price-cal">$3.99 • 400 cal</p>
+      </div>
+    </div>
+
+    <!-- Nachos -->
+    <div class="menu-card">
+      <img src="https://images.unsplash.com/photo-1600628420777-7f97c3c75f90" alt="Nachos">
+      <div class="menu-card-body">
+        <h5>Nachos</h5>
+        <p>Tortilla chips with cheese, jalapeños, and salsa</p>
+        <p class="price-cal">$4.49 • 450 cal</p>
+      </div>
+    </div>
 
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer text-center">
+<footer>
   <p>© 2026 FireBun Burgers • Fictional Restaurant</p>
 </footer>
 
