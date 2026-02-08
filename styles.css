@@ -1,0 +1,88 @@
+/* ===== GLOBAL ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+footer {
+  background-color: #212529;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+}
+
+/* ===== HOME PAGE ===== */
+.hero-section {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("https://images.unsplash.com/photo-1606755962773-d324e0a13086");
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+  color: white;
+}
+
+.tagline {
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* ===== MENU PAGE ===== */
+.menu-header {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("https://images.unsplash.com/photo-1550547660-d9450f859349");
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  color: white;
+}
+
+.menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.menu-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  width: 250px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.menu-card:hover {
+  transform: scale(1.05);
+}
+
+.menu-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.menu-card-body {
+  padding: 15px;
+}
+
+.menu-card-body h5 {
+  margin: 0 0 10px 0;
+}
+
+.menu-card-body p {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.menu-card-body .price-cal {
+  font-weight: bold;
+  margin-top: 10px;
+}
