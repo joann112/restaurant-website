@@ -5,10 +5,7 @@
   <title>FireBun Menu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Shared CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -24,96 +21,82 @@
 
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="menu.html">Menu</a>
-        </li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="menu.html">Menu</a></li>
+        <li class="nav-item"><a class="nav-link" href="order.html">Order</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- MENU HEADER -->
+<!-- HEADER -->
 <header class="menu-header text-center">
   <div class="container">
     <h1 class="display-4 fw-bold">Our Menu</h1>
-    <p class="lead">Delicious items with calories and prices</p>
+    <p class="lead">Click to add items to your order</p>
   </div>
 </header>
 
 <!-- MENU CONTENT -->
 <section class="py-5">
-  <div class="container menu-container">
-
-    <!-- Burger Card -->
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Classic FireBun">
-      <div class="menu-card-body">
-        <h5>Classic FireBun</h5>
-        <p>Beef patty, cheddar cheese, lettuce, tomato, FireBun sauce</p>
-        <p class="price-cal">$7.99 • 550 cal</p>
-      </div>
-    </div>
-
-    <!-- Double Heat -->
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1604908177520-0ce16be9f31e" alt="Double Heat Burger">
-      <div class="menu-card-body">
-        <h5>Double Heat</h5>
-        <p>Two beef patties, spicy sauce, pickles, cheddar</p>
-        <p class="price-cal">$9.99 • 750 cal</p>
-      </div>
-    </div>
-
-    <!-- Veggie Burger -->
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Green Grill">
-      <div class="menu-card-body">
-        <h5>Green Grill</h5>
-        <p>Plant-based patty, lettuce, tomato, vegan sauce</p>
-        <p class="price-cal">$7.49 • 500 cal</p>
-      </div>
-    </div>
-
-    <!-- Fries -->
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1550317138-10000687a72b" alt="Classic Fries">
-      <div class="menu-card-body">
-        <h5>Classic Fries</h5>
-        <p>Golden, crispy, lightly salted</p>
-        <p class="price-cal">$2.99 • 300 cal</p>
-      </div>
-    </div>
-
-    <!-- Milkshake -->
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1576765607922-64f1a6a01702" alt="Chocolate Shake">
-      <div class="menu-card-body">
-        <h5>Chocolate Shake</h5>
-        <p>Rich chocolate flavor, creamy and cold</p>
-        <p class="price-cal">$3.99 • 400 cal</p>
-      </div>
-    </div>
-
-    <!-- Nachos -->
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1600628420777-7f97c3c75f90" alt="Nachos">
-      <div class="menu-card-body">
-        <h5>Nachos</h5>
-        <p>Tortilla chips with cheese, jalapeños, and salsa</p>
-        <p class="price-cal">$4.49 • 450 cal</p>
-      </div>
-    </div>
-
-  </div>
+  <div class="container menu-container" id="menuContainer"></div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <p>© 2026 FireBun Burgers • Fictional Restaurant</p>
 </footer>
+
+<script>
+  const menuItems = [
+    { name: "Classic FireBun", price: 7.99, img: "https://images.unsplash.com/photo-1550547660-d9450f859349" },
+    { name: "Green Grill", price: 7.49, img: "https://img.freepik.com/free-photo/front-view-vegetarian-burger-counter-with-tomatoes_23-2148784525.jpg" },
+    { name: "Fries", price: 2.99, img: "https://images.unsplash.com/photo-1576107232684-1279f390859f?auto=format&fit=crop&w=800&q=80" },
+    {
+      name: "Double Heat",
+      price: 9.99,
+      img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      name: "Chocolate Shake",
+      price: 3.99,
+      img: "https://images.unsplash.com/photo-1577805947697-89e18249d767?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      name: "Nachos",
+      price: 4.49,
+      img: "https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=800&q=80"
+    }
+  ];
+
+  function addToOrder(item) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const existing = cart.find(i => i.name === item.name);
+    if (existing) existing.qty++;
+    else cart.push({ ...item, qty: 1 });
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(item.name + " added to order!");
+  }
+
+  const container = document.getElementById("menuContainer");
+
+  menuItems.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "menu-card";
+    card.innerHTML = `
+    <img src="${item.img}" alt="${item.name}">
+    <div class="menu-card-body">
+      <h5>${item.name}</h5>
+      <p>$${item.price.toFixed(2)}</p>
+      <button class="btn btn-primary btn-sm" onclick='addToOrder(${JSON.stringify(item)})'>
+        Add to Order
+      </button>
+    </div>
+  `;
+    container.appendChild(card);
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
