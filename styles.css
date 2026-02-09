@@ -19,8 +19,7 @@ footer {
 
 /* ===== HOME PAGE ===== */
 .hero-section {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url("https://images.unsplash.com/photo-1606755962773-d324e0a13086");
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1606755962773-d324e0a13086");
   background-size: cover;
   background-position: center;
   padding: 100px 0;
