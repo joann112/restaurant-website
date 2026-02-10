@@ -23,7 +23,7 @@ footer {
   background-size: cover;
   background-position: center;
   padding: 100px 0;
-  color: light blue;
+  color: white;
 }
 
 .tagline {
@@ -84,4 +84,9 @@ footer {
 .menu-card-body .price-cal {
   font-weight: bold;
   margin-top: 10px;
+}
+
+.menu-header h1 {
+  font-weight: 800;
+  color: white;
 }
