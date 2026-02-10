@@ -85,3 +85,8 @@ footer {
   font-weight: bold;
   margin-top: 10px;
 }
+
+.menu-header h1 {
+  font-weight: 800;
+  color: white;
+}
