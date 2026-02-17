@@ -1,11 +1,6 @@
 # restaurant-website by Joann Yendluri and Aashi Kadakia
 A website about our fast food restaurant including a menu and an about me page. It is a website to order food.
-firebun-website/
-  ├─ index.html
-  ├─ index.css
-  ├─ menu.html
-  └─ menu.css
-  # 🔥 FireBun Burgers
+
 
 A fictional fast-food restaurant website built using **HTML, CSS, JavaScript, and Bootstrap 5**.  
 This project demonstrates a responsive multi-page layout with a client-side ordering system powered by browser `localStorage`.
